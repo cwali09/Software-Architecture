@@ -1,7 +1,7 @@
 Pipe & Filter Homework 1:
 
 How to run:
-java InputReader.java pftest.txt | java WordFilter.java | java WordSorter.java | java OutputWriter.java
+<!-- java InputReader.java pftest.txt | java WordFilter.java | java WordSorter.java | java OutputWriter.java -->
 
 java InputReader.java pftest.txt | java WordFilter.java | java WordSorter.java | java WordFilter.java | java WordSorter.java | java OutputWriter.java
 
