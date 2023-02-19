@@ -1,22 +1,23 @@
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
 
 public class OutputWriter {
-    public static void main(String[] args) {
-        BufferedReader inputReader = new BufferedReader(new InputStreamReader(System.in));
+    private static BufferedReader _inputReader = new BufferedReader(new InputStreamReader(System.in));
+    
+    public static void Ouput() {
         String line;
         try {
-            while ((line = inputReader.readLine()) != null) {
+            while ((line = _inputReader.readLine()) != null) {
                 System.out.println(line);
             }
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+    }
+
+    public static void main(String[] args) {
+        OutputWriter.Ouput();
     }
 }

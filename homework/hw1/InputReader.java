@@ -2,31 +2,20 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 
 class InputReader {
-    private static List<String> lines = new ArrayList<>();
+    private static List<String> _lines = new ArrayList<>();
 
-    public static void main(String[] args) {
-        BufferedReader inputReader = new BufferedReader(new InputStreamReader(System.in));
-        String filename = "";
-
+    public static void Read(String filename) {
         try {
-            filename = inputReader.readLine();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-        try {
-            FileReader fileReader = new FileReader(filename);
-            BufferedReader reader = new BufferedReader(fileReader);
+            BufferedReader reader = new BufferedReader(
+                new FileReader(filename)); // Need this to read text from file
             String line;
             while ((line = reader.readLine()) != null) {
-                lines.add(line);
+                _lines.add(line);
                 System.out.println(line);
             }
             reader.close();
@@ -38,5 +27,9 @@ class InputReader {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+    }
+
+    public static void main(String[] args) {
+        InputReader.Read(args[0]);
     }
 }

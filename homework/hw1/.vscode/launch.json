@@ -4,25 +4,34 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        // {
+        //     "type": "java",
+        //     "name": "Debug Pipeline",
+        //     "request": "launch",
+        //     "javaExec": "/usr/bin/java",
+        //     "mainClass": "InputReader",
+        //     "projectName": "hw1_aadd15fd",
+        //     "console": "externalTerminal",
+        //     // "args": ["pftest.txt"," | java WordFilter.java | java WordSorter.java | java WordFilter.java | java WordSorter.java | java OutputWriter.java"],
+        //     // "args": ["pftest.txt", "|", "java", "WordFilter.java", "|", "java", "WordSorter.java", "|", "java", "WordFilter.java", "|", "java", "WordSorter.java", "|", "java", "OutputWriter.java"],
+        // },
+
+        {
+            "type": "java",
+            "name": "InputReader",
+            "request": "launch",
+            "mainClass": "InputReader",
+            "console": "integratedTerminal",
+            "args": [
+              "pftest.txt"
+            ],
+            "vmArgs": "-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=8000 WordFilter.java WordSorter.java OutputWriter.java"
+        },
         {
             "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
         },
-        {
-            "type": "java",
-            "name": "Launch InputReader",
-            "request": "launch",
-            "mainClass": "InputReader",
-            "projectName": "hw1_aadd15fd"
-        },
-        {
-            "type": "java",
-            "name": "Launch WordFilter",
-            "request": "launch",
-            "mainClass": "WordFilter",
-            "projectName": "hw1_aadd15fd"
-        }
     ]
 }
